@@ -1,0 +1,37 @@
+{
+    "name": "petrgrishin/yii-app-structure",
+    "description": "Yii app structure",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "yiisoft/yii": "*"
+    },
+    "require-dev": {
+        "league/phpunit-coverage-listener": "~1.0"
+    },
+    "authors": [
+        {
+            "name": "Petr Grishin",
+            "email": "petr.grishin@grishini.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Module\\": "module/"
+        },
+        "files": [
+            "app/Yii.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\": "app/",
+            "Module\\": "module/"
+        },
+        "files": [
+            "vendor/yiisoft/yii/framework/YiiBase.php",
+            "app/Yii.php"
+        ]
+    }
+}
