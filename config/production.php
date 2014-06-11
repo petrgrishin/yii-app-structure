@@ -4,3 +4,7 @@
  */
 $rootDirectory = __DIR__ . '/../';
 $applicationDirectory = $rootDirectory . 'app/';
+
+return array(
+    'basePath' => $applicationDirectory,
+);
