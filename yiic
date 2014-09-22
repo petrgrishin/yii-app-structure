@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/app/Yii.php';
+$config = require_once __DIR__ . '/config/console.php';
+
+defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+
+if (isset($config)) {
+    $app = Yii::createConsoleApplication($config);
+    $app->commandRunner->addCommands(YII_PATH . '/cli/commands');
+} else {
+    $app = Yii::createConsoleApplication(array('basePath' => dirname(__FILE__) . '/cli'));
+}
+
+$env = @getenv('YII_CONSOLE_COMMANDS');
+if (!empty($env)) {
+    $app->commandRunner->addCommands($env);
+}
+
+$app->run();
