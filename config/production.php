@@ -7,4 +7,8 @@ $applicationDirectory = $rootDirectory . 'app/';
 
 return array(
     'basePath' => $applicationDirectory,
+    'components' => array(
+        'db' => require __DIR__ . '/db.php',
+    ),
+    'modules' => array(),
 );
