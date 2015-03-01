@@ -6,5 +6,7 @@
 namespace App\Controller;
 
 
-abstract class BaseController extends \CController {
+use CController;
+
+abstract class BaseController extends CController {
 }
