@@ -6,7 +6,9 @@
 namespace App;
 
 
-class ApplicationModule extends \CWebApplication {
+use CWebApplication;
+
+class ApplicationModule extends CWebApplication {
     const CONTROLLER_DIR_NAME = 'Controller';
 
     public static function className() {
